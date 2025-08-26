@@ -34,9 +34,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 For commercial licensing inquiries or questions about permitted uses,
 please contact the copyright holder.
 
-Version: 1.0
-Last Updated: August 2025
-
 ===========================================================================================================
 
 # Git LFS Tools - 프리웨어 라이선스
@@ -78,8 +75,5 @@ Last Updated: August 2025
 상업적 라이선스 문의 또는 허용 사용에 대한 질문은 저작권자에게 연락하시기 바랍니다.
 
 ---
-
-**버전**: 1.0  
-**최종 업데이트**: 2025년 8월
 
 **본 라이선스는 대한민국 법률에 따라 해석되고 적용됩니다.**
