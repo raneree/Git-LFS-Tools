@@ -42,7 +42,7 @@ echo   [4] 종료                - 프로그램 종료
 echo.
 echo ================================================================================
 echo.
-choice /c 1234 /n /m "선택하세요 ^(1-4^): " >nul 2>&1
+choice /c 1234 /n /m "선택하세요 ^(1-4^): " 2>nul
 if errorlevel 4 goto :end
 if errorlevel 3 goto :info  
 if errorlevel 2 goto :migration
@@ -51,6 +51,8 @@ goto :menu
 
 :tracker
 cls >nul 2>&1
+echo [AUTO] .gitignore 체크 및 LFS 도구 예외처리...
+call :update_gitignore
 echo [EXECUTE] Auto-LFS-Tracker를 실행합니다...
 echo ================================================================================
 "LFS-Tools\Auto-LFS-Tracker.exe"
@@ -60,6 +62,8 @@ goto :menu
 
 :migration
 cls >nul 2>&1
+echo [AUTO] .gitignore 체크 및 LFS 도구 예외처리...
+call :update_gitignore
 echo [EXECUTE] LFS-Migration을 실행합니다...
 echo ================================================================================
 "LFS-Tools\LFS-Migration.exe"
@@ -77,6 +81,29 @@ dir "LFS-Tools\*.exe" /b 2>nul
 echo.
 pause >nul
 goto :menu
+
+:update_gitignore
+if exist ".gitignore" (
+    findstr /i "LFS-Tools" .gitignore >nul 2>&1
+    if not errorlevel 1 (
+        echo [SKIP] .gitignore에 이미 LFS 도구 예외처리가 있습니다.
+        goto :eof
+    )
+)
+echo [ADD] .gitignore에 LFS 도구 예외처리 추가 중...
+(
+echo.
+echo # LFS Tools - Auto-generated
+echo LFS-Tools/
+echo LFS-launcher.bat
+echo *.exe
+) >> .gitignore 2>nul
+if exist ".gitignore" (
+    echo [SUCCESS] .gitignore 업데이트 완료
+) else (
+    echo [WARN] .gitignore 업데이트에 실패했습니다
+)
+goto :eof
 
 :end
 cls >nul 2>&1
