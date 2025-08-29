@@ -1,4 +1,4 @@
-# LFS Tools v2.0
+# LFS Tools v2.1
 
 Git LFS 자동 등록 및 마이그레이션 도구
 
