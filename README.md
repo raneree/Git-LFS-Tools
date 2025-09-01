@@ -1,4 +1,4 @@
-# LFS Tools v2.2
+# LFS Tools v2.3
 
 Git LFS 자동 등록 및 마이그레이션 도구
 
@@ -9,12 +9,12 @@ Git LFS 자동 등록 및 마이그레이션 도구
 
 ## 구성 파일
 
-- `LFS-Tools_v2.2.exe` - 실행파일
+- `LFS-Tools_v2.3.exe` - 실행파일
 
 ## 사용법
 
 ### 1. LFS 도구 실행
-`LFS-Tools_v2.2.exe` 실행
+`LFS-Tools_v2.3.exe` 실행
 
 ### 2. 기능 선택
 
